@@ -1,0 +1,33 @@
+{
+  "name": "fms.js",
+  "version": "0.1.0",
+  "description": "FileMaker Server Connection for Node and the browser",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/geistinteractive/fms.js.git"
+  },
+  "keywords": [
+    "FileMaker",
+    "Database"
+  ],
+  "author": "Todd Geist <todd@geistinteractive.com> (http://www.geisintertactive.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/geistinteractive/fms.js/issues"
+  },
+  "homepage": "https://github.com/geistinteractive/fms.js",
+  "dependencies": {
+    "is": "^3.0.1",
+    "lodash": "^3.8.0",
+    "superagent": "^1.2.0",
+    "superagent-xml2jsparser": "^0.1.1"
+  },
+  "devDependencies": {
+    "chai": "^2.3.0",
+    "mocha": "^2.2.4"
+  }
+}
