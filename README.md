@@ -20,7 +20,7 @@ var fms = require('fms-js');
 var connection = fms.connection({
 	url : '<url>',
 	userName : 'username',
-	password : 'password
+	password : 'password'
 });
 
 //use the connection object to create requests
