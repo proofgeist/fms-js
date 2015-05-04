@@ -13,7 +13,7 @@ fms-js can be installed using npm
 Once installed you can require the fms object, and start to use it
 
 ```javascript
-var fms = require('fms-js);
+var fms = require('fms-js');
 
 // create a connection object
 
