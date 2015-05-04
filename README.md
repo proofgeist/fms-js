@@ -1,15 +1,15 @@
 # fms-js
 node and browser connection for FileMaker Server
 
-###Status: 2 - unstable
+### Status: 2 - unstable
 The api is under development and may change. Backwards compatibility will be maintained if feasible. See [node stability ratings](https://gist.github.com/isaacs/1776425)
 
-###Installation
+### Installation
 fms-js can be installed using npm 
 
 `npm install fms-js`
 
-###Usage
+### Usage
 Once installed you can require the fms object, and start to use it
 
 ```javascript
