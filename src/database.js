@@ -12,8 +12,8 @@ var FMSJSError = require('./FMSJSError');
  * @param request
  * @param dbname
  */
-var db = function (request, name){
-    var request = request;
+var db = function (postFactory, name){
+    var postFactory = postFactory;
     var dbname = name;
 
     if(dbname === undefined){
@@ -25,7 +25,7 @@ var db = function (request, name){
             "-db" : dbname,
             "-scriptnames" : ""
         }
-        return createRequest(request, opts )
+        return createRequest(postFactory(), opts )
     }
 
     var createLayoutNamesRequest = function () {
@@ -33,11 +33,11 @@ var db = function (request, name){
             "-db" : dbname,
             "-layoutnames" : ""
         }
-        return createRequest(request, opts )
+        return createRequest(postFactory(), opts )
     }
 
     var layout = function(name){
-        return createLayout(request, dbname, name)
+        return createLayout(postFactory, dbname, name)
     }
 
     return {

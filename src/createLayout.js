@@ -17,9 +17,9 @@ var _ = require('lodash');
  * @param name
  * @returns {{query: Function, findany: Function, find: Function, create: Function, new: Function, edit: Function, remove: Function, delete: Function}}
  */
-var createLayout = function(request, dbname, name){
+var createLayout = function(postFactory, dbname, name){
 
-    var request = request;
+    var postFactory = postFactory;
     var dbname = dbname;
     var name = name
 
@@ -39,7 +39,7 @@ var createLayout = function(request, dbname, name){
         var requestOptions = baseOptions()
         requestOptions = _.extend(requestOptions, options)
 
-        return creatRequest(request,requestOptions)
+        return creatRequest(postFactory() ,requestOptions)
     }
 
     /**
@@ -51,7 +51,7 @@ var createLayout = function(request, dbname, name){
         var requestOptions = baseOptions()
         requestOptions = _.extend(requestOptions, options)
         requestOptions['-findany'] = ''
-        return creatRequest(request, requestOptions )
+        return creatRequest(postFactory() , requestOptions )
     }
 
     /**
@@ -63,7 +63,7 @@ var createLayout = function(request, dbname, name){
         var requestOptions = baseOptions()
         requestOptions = _.extend(requestOptions, options)
         requestOptions['-findall'] = ''
-        return creatRequest(request, requestOptions)
+        return creatRequest(postFactory() , requestOptions)
     }
 
     /**
@@ -77,7 +77,7 @@ var createLayout = function(request, dbname, name){
         requestOptions = _.extend(requestOptions, criteria)
         requestOptions = _.extend(requestOptions, options)
         requestOptions['-find'] = ''
-        return creatRequest(request, requestOptions )
+        return creatRequest(postFactory(), requestOptions )
     }
 
     /**
@@ -91,7 +91,7 @@ var createLayout = function(request, dbname, name){
         requestOptions = _.extend(requestOptions, data)
         requestOptions = _.extend(requestOptions, options)
         requestOptions['-new'] = '';
-        return creatRequest(request, requestOptions )
+        return creatRequest(postFactory(), requestOptions )
     }
 
     /**
@@ -105,10 +105,10 @@ var createLayout = function(request, dbname, name){
         requestOptions = _.extend(requestOptions, data)
         requestOptions = _.extend(requestOptions, options)
         requestOptions['-edit'] = '';
-        return creatRequest(request, requestOptions );
+        return creatRequest(postFactory(), requestOptions );
     }
 
-    /**
+    /**git
      * creates a delete record request
      * @param recordid
      * @param options
@@ -119,12 +119,13 @@ var createLayout = function(request, dbname, name){
         requestOptions = _.extend(requestOptions, options)
         requestOptions['-recid'] = recordid;
         requestOptions['-edit'] = '';
-        return creatRequest(request, requestOptions );
+        return creatRequest(postFactory() , requestOptions );
     }
 
     return {
         query : query,
-        findany : findall,
+        findany : findany,
+        findall : findall,
         find : find,
         create : create,
         new : create,

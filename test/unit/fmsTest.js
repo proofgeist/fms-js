@@ -27,7 +27,7 @@ describe('FMS', function () {
 
     describe( 'db' , function(){
       it('should return an object if given a name' , function ( ){
-          connection.db('FMServer_Sample').should.be.an('object')
+          connection.db(test.dbname).should.be.an('object')
       })
     });
 
@@ -35,7 +35,7 @@ describe('FMS', function () {
         it('should return a object with a prop an array prop "data"', function (done) {
 
             connection
-                .db('FMServer_Sample')
+                .db(test.dbname)
                 .layoutnames()
                 .send(function (err, layouts) {
 
@@ -53,7 +53,7 @@ describe('FMS', function () {
         it('should return a object with a prop an array prop "data"', function (done) {
 
             var db =connection
-                .db('FMServer_Sample')
+                .db(test.dbname)
 
             db.scriptnames()
                 .send(function (err, scripts) {

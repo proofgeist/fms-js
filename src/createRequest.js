@@ -18,17 +18,18 @@ var createQuery = function (post, options) {
 
     var options = options
     var post = post
-        .send(options)
+      //  .send(options)
         .set('Content-Type', 'application/x-www-form-urlencoded');
 
 
     var send = function(cb){
-        post.end(function (err, response) {
+        post.send(options).end(function (err, response) {
             if(err) return cb(err)
 
             var fmResponse = parseFMResponse(response.body.fmresultset);
             if (is.instance (fmResponse, FileMakerServerError)) {
-                fmResponse.url = post.req.url
+                fmResponse.url = post.url
+                fmResponse.data = post._data
                 cb ( fmResponse )
             }else{
                 cb (null, fmResponse )

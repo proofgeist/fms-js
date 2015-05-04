@@ -36,7 +36,7 @@ var connection = function (options) {
     };
 
     var db = function (name) {
-        return database(createPostRequest(), name)
+        return database(createPostRequest, name)
     }
 
     return {
