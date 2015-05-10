@@ -1,6 +1,6 @@
 {
   "name": "fms-js",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "FileMaker Server Connection for Node and the browser",
   "main": "index.js",
   "scripts": {
