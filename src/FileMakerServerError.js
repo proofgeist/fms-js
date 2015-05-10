@@ -23,7 +23,7 @@ FileMakerServerError.prototype = Object.create(Error.prototype);
 FileMakerServerError.prototype.constructor = FileMakerServerError;
 
 function isTransient(error){
-  return  (error === 401 || error === 8003 || error === 301)
+  return  (error === '401' || error === '8003' || error === '301')
 }
 
 function getMessge(errorCode){
