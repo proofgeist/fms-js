@@ -70,8 +70,8 @@ var parseFMResponse = function (fmresultset) {
             if(relatedSets){
                 obj.relatedSets = handleRelatedSets(relatedSets)
             }
-            obj.mod_id= record.$['mod-id'];
-            obj.record_id = record.$['record-id'];
+            obj.modid= record.$['mod-id'];
+            obj.recid = record.$['record-id'];
             return obj
         })
     }else{
@@ -120,8 +120,8 @@ var handleRelatedSets = function(relatedSets){
         if (records){
             data = records.map(function (record) {
                 var obj = remapFields(record.field);
-                obj.mod_id= record.$['mod-id'];
-                obj.record_id = record.$['record-id'];
+                obj.modid= record.$['mod-id'];
+                obj.recid = record.$['record-id'];
                 return obj
             })
         }else{

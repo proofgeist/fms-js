@@ -32,7 +32,7 @@ describe('FMS', function () {
     });
 
     describe('#layoutnames', function () {
-        it('should return a object with a prop an array prop "data"', function (done) {
+        it.only('should return a object with a prop an array prop "data"', function (done) {
 
             connection
                 .db(test.dbname)
