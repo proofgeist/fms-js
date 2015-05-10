@@ -56,8 +56,17 @@ var createQuery = function (post, options) {
  */
 var parseFMResponse = function (fmresultset) {
     var error = fmresultset.error[0].$.code
-    if(error != 0  && error != 401){
-        return new FileMakerServerError(error,'')
+    if(error != 0 ){
+        var err = new FileMakerServerError(error,'');
+        //some errors are transient, they should just return empty sets and basic info
+        if(err.isTransient){
+            return {
+                error : error ,
+                errorMessage : err.message
+            }
+        }else{
+            return err
+        }
     }
     var recordset = fmresultset.resultset[0]
     var records = recordset.record

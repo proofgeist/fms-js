@@ -16,10 +16,15 @@ function FileMakerServerError(code, url) {
   this.name = 'FileMakerServerError';
   const err = Error(this.message); // http://es5.github.io/#x15.11.1
   this.stack = err.stack;
+  this.isTransient = isTransient(code);
 }
 
 FileMakerServerError.prototype = Object.create(Error.prototype);
 FileMakerServerError.prototype.constructor = FileMakerServerError;
+
+function isTransient(error){
+  return  (error === 401 || error === 8003 || error === 301)
+}
 
 function getMessge(errorCode){
   var returnString = "";
@@ -227,7 +232,7 @@ function getMessge(errorCode){
     case 1405:  returnString="Failed to free connection (ODBC)";  break;
     case 1406:  returnString="Failed check for SQL API (ODBC)";  break;
     case 1407:  returnString="Failed to allocate statement (ODBC)";  break;
-    case 1408:  returnString="Extended error (ODBC)";  break;
+    case 8003:  returnString="Record is locked. Similar to 301";  break;
   }
   return returnString;
 }
