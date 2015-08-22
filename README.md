@@ -154,8 +154,8 @@ The rest of the API provides short hand methods on top of this query
 * takes an options object with all data and query options. IT MUST include the recid field
 * returns a request object that will edit a record. send it with .send
 
-##### layout.delete({options})
-* takes an options object with all data and query options. IT MUST include the recid field
+##### layout.delete(recid)
+* recid is FileMakers internal record id
 * returns a request object that will delete the record. send it with .send
 
 ##### request.set(name, value)
