@@ -118,7 +118,7 @@ var createLayout = function(postFactory, dbname, name){
         var requestOptions = baseOptions()
         requestOptions = _.extend(requestOptions, options)
         requestOptions['-recid'] = recordid;
-        requestOptions['-edit'] = '';
+        requestOptions['-delete'] = '';
         return creatRequest(postFactory() , requestOptions );
     }
 
