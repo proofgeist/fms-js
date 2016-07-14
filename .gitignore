@@ -29,3 +29,4 @@ node_modules
 .idea
 
 /test/config.js
+/nbproject/private/
