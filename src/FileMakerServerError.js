@@ -14,6 +14,7 @@ function FileMakerServerError(code, url) {
   this.error = code;
   this.message = getMessge(code);
   this.name = 'FileMakerServerError';
+  console.log('FileMaker Error Code: ',error);
   const err = Error(this.message); // http://es5.github.io/#x15.11.1
   this.stack = err.stack;
   this.isTransient = isTransient(code);
