@@ -105,9 +105,11 @@ var parseFMResponse = function (fmresultset) {
  */
 var remapFields = function (fields) {
     var obj = {};
-    fields.forEach(function (field) {
-        obj[field.$.name] = field.data[0]
-    });
+    if (fields) {
+        fields.forEach(function (field) {
+            obj[field.$.name] = field.data[0]
+        });
+    }
     return obj
 };
 
