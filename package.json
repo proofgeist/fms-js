@@ -22,7 +22,7 @@
   "homepage": "https://github.com/geistinteractive/fms-js",
   "dependencies": {
     "is": "^3.0.1",
-    "lodash": "^3.8.0",
+    "lodash": "^4.17.19",
     "superagent": "^1.2.0",
     "superagent-xml2jsparser": "^0.1.1"
   },
